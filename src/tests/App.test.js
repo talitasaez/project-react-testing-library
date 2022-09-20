@@ -48,12 +48,15 @@ describe('Link do topo da aplicação', () => {
     },
   );
   // eslint-disable-next-line max-len
-  test('Teste se a aplicação é redirecionada para a página Not Found  ao entrar em uma URL desconhecida.', () => {
-    const { history } = renderWithRouter(<App />);
+  test(
+    'Teste se a aplicação é redirecionada para a página Not Found  URL desconhecida.',
+    () => {
+      const { history } = renderWithRouter(<App />);
 
-    act(() => {
-      history.push('/rotanaoexiste');
-    });
-    expect(history.location.pathname).toBe('/rotanaoexiste');
-  });
+      act(() => {
+        history.push('/rotanaoexiste');
+      });
+      expect(history.location.pathname).toBe('/rotanaoexiste');
+    },
+  );
 });
